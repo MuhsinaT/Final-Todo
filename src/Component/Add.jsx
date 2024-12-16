@@ -7,8 +7,7 @@ import './Add.css'
 function Add() {
 
 
-  const [tasks, setTasks] = useState(() => 
-    {
+  const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem('tasks');
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
@@ -32,7 +31,7 @@ function Add() {
     setShow(true);
   };
 
-  const handleAdd = () => {
+  const handleAddTask = () => {
     if (title && description) {
       setTasks([
         ...tasks,
@@ -40,9 +39,7 @@ function Add() {
       ]);
       handleClose();
     }
-    else {
-        alert("Please provide both title and description.");
-      }
+    
   };
 
   const toggleCompletion = (id) => {
